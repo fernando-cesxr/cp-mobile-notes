@@ -16,6 +16,9 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen name="Inicio" component={Inicio}/>
         <Tab.Screen name="Criar" component={CriarNota}/>
+        <Tab.Screen name="Editar" component={EditarNota}/>
+        <Tab.Screen name="Visualizar" component={VisualizarNota}/>
+
       </Tab.Navigator>
     </NavigationContainer>
     </>
