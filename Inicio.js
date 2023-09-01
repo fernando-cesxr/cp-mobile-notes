@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList,TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
 
-const Inicio = () => {
+import { NavigationContainer }  from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Inicio = ({navigation}) => {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
+  
     const carregarDados = async () => {
       try {
         const keys = await AsyncStorage.getAllKeys();
@@ -21,9 +25,15 @@ const Inicio = () => {
         console.error('Erro ao carregar os dados:', error);
       }
     };
+    
 
-    carregarDados();
-  }, []);
+    useFocusEffect(
+      React.useCallback(() => {
+        carregarDados();
+      }, [])
+    );
+
+  
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
