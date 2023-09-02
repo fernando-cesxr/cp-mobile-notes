@@ -12,13 +12,12 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <>
-    <NavigationContainer>
+    <NavigationContainer>    
       <Tab.Navigator>
         <Tab.Screen name="Inicio" component={Inicio}/>
         <Tab.Screen name="Criar" component={CriarNota}/>
-        <Tab.Screen name="Editar" component={EditarNota}/>
-        <Tab.Screen name="Visualizar" component={VisualizarNota}/>
-
+        <Tab.Screen name="Editar" component={EditarNota} options={{tabBarButton: () => null}}/>
+        <Tab.Screen name="Visualizar" component={VisualizarNota} options={{tabBarButton: () => null}}/>
       </Tab.Navigator>
     </NavigationContainer>
     </>
@@ -33,4 +32,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  cor: {
+    backgroundColor: '#FFFFF0'
+  }
 });
