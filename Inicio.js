@@ -49,7 +49,7 @@ const Inicio = ({navigation}) => {
 
   return(
     <View style={styles.container}>
-      <Text style={styles.title}>Suas Notas</Text>
+      <Text style={styles.title}>Notas Rápidas</Text>
       <FlatList
         data={data}
         renderItem={renderItem}

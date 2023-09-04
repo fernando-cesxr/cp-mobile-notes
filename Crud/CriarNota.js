@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const CriarNota = ({navigation}) => {
+const CriarNota = () => {
   const [titulo, setTitulo] = useState('');
   const [descricao, setDescricao] = useState('');
 
@@ -45,7 +45,7 @@ const CriarNota = ({navigation}) => {
       />
 
       <TouchableOpacity onPress={inserirDados} style={styles.button}>
-        <Text style={styles.text}>Inserir dados</Text>
+        <Text style={styles.text}>Inserir nota</Text>
       </TouchableOpacity>
 
     </View>
