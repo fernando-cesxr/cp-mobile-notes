@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer }  from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import CriarNota from './Crud/CriarNota';
+import CriarNota from './CriarNota';
 import Inicio from './Inicio'
-import EditarNota from './Crud/EditarNota';
-import VisualizarNota from './Crud/VisualizarNota';
+import Timer from './Timer'
+
 
 
 const Tab = createBottomTabNavigator();
@@ -16,8 +16,7 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen name="Inicio" component={Inicio}/>
         <Tab.Screen name="Criar" component={CriarNota}/>
-        <Tab.Screen name="Editar" component={EditarNota} options={{tabBarButton: () => null}}/>
-        <Tab.Screen name="Visualizar" component={VisualizarNota} options={{tabBarButton: () => null}}/>
+        <Tab.Screen name="Timer" component={Timer}/>
       </Tab.Navigator>
     </NavigationContainer>
     </>
